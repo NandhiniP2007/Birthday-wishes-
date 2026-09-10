@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Birthday Surprise 🎂</title>
+
+<title>Happy Birthday Hubby ❤️</title>
 
 <style>
 * {
@@ -17,7 +18,7 @@ body {
     justify-content: center;
     align-items: center;
     font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #ffd6e8, #d9c2ff, #c7f0ff);
+    background: linear-gradient(135deg, #ffd1dc, #e5c7ff, #c7edff);
     overflow: hidden;
 }
 
@@ -26,25 +27,26 @@ body {
     max-width: 430px;
     padding: 25px;
     text-align: center;
-    background: rgba(255,255,255,0.85);
+    background: rgba(255,255,255,0.92);
     border-radius: 30px;
     box-shadow: 0 10px 35px rgba(0,0,0,0.2);
 }
 
-h1 {
-    color: #ff4081;
-    font-size: 38px;
-    margin: 10px 0;
+.top {
+    font-size: 42px;
     animation: bounce 1.5s infinite;
 }
 
-h2 {
-    color: #7b42f6;
+h1 {
+    color: #ff4081;
+    font-size: 36px;
+    margin: 10px 0;
+    animation: glow 2s infinite;
 }
 
 .photo {
-    width: 220px;
-    height: 220px;
+    width: 230px;
+    height: 230px;
     object-fit: cover;
     border-radius: 50%;
     border: 7px solid white;
@@ -52,10 +54,23 @@ h2 {
     margin: 15px;
 }
 
+h2 {
+    color: #7b42f6;
+    font-size: 23px;
+}
+
 .message {
-    font-size: 18px;
     color: #444;
+    font-size: 18px;
     line-height: 1.6;
+}
+
+.love {
+    color: #ff4081;
+    font-size: 26px;
+    font-weight: bold;
+    margin: 18px 0;
+    animation: glow 2s infinite;
 }
 
 button {
@@ -66,13 +81,130 @@ button {
     color: white;
     font-size: 17px;
     cursor: pointer;
-    margin-top: 10px;
-}
-
-button:active {
-    transform: scale(0.95);
 }
 
 #surprise {
     display: none;
-    color: #
+    color: #ff4081;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 18px;
+    line-height: 1.6;
+}
+
+.heart {
+    position: absolute;
+    bottom: -50px;
+    font-size: 25px;
+    animation: float 5s linear infinite;
+}
+
+@keyframes bounce {
+    0%,100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes glow {
+    0%,100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.08);
+    }
+}
+
+@keyframes float {
+    0% {
+        bottom: -50px;
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    100% {
+        bottom: 110%;
+        opacity: 0;
+        transform: translateX(100px) rotate(360deg);
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="top">🎂🎈✨💖</div>
+
+    <h1>Happy Birthday Hubby 🎉</h1>
+
+    <img src="IMG_20251220_164311_1.jpg"
+         class="photo"
+         alt="Birthday Photo">
+
+    <h2>🥳 Wishing You a Beautiful Birthday 🥳</h2>
+
+    <p class="message">
+        May your special day be filled with
+        happiness, smiles and beautiful memories. 💖
+        <br>
+        Stay happy and keep smiling always! ✨
+    </p>
+
+    <div class="love">
+        I Love You Forever ♾️❤️
+    </div>
+
+    <button onclick="showSurprise()">
+        🎁 Click for Surprise
+    </button>
+
+    <div id="surprise">
+        🎉 Happy Birthday Hubby! 🎂💖
+        <br>
+        Forever & Always ♾️❤️✨
+    </div>
+
+</div>
+
+<script>
+
+function showSurprise() {
+
+    document.getElementById("surprise").style.display = "block";
+
+    for (let i = 0; i < 30; i++) {
+
+        let heart = document.createElement("div");
+
+        heart.className = "heart";
+        heart.innerHTML = "💖";
+
+        heart.style.left = Math.random() * 100 + "%";
+
+        heart.style.animationDuration =
+            (3 + Math.random() * 4) + "s";
+
+        heart.style.fontSize =
+            (15 + Math.random() * 25) + "px";
+
+        document.body.appendChild(heart);
+
+        setTimeout(function() {
+            heart.remove();
+        }, 7000);
+    }
+}
+
+</script>
+
+</body>
+</html>
